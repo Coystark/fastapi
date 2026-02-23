@@ -2,7 +2,6 @@ from google import genai
 
 from app.core.config import get_settings
 
-
 _client: genai.Client | None = None
 
 
