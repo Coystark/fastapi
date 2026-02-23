@@ -53,9 +53,7 @@ def _extract_jobs(data: dict) -> dict:
                 "job_employment_type": job.get("job_employment_type"),
                 "job_description": description[:500],
                 "job_apply_link": job.get("job_apply_link"),
-                "job_posted_at_datetime_utc": job.get(
-                    "job_posted_at_datetime_utc"
-                ),
+                "job_posted_at_datetime_utc": job.get("job_posted_at_datetime_utc"),
             }
         )
     return {"jobs": jobs, "total": len(jobs)}

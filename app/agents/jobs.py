@@ -3,21 +3,18 @@ from google.genai import types
 from app.adapters.jsearch import search_jobs
 from app.agents.base import BaseAgent
 
-SYSTEM_INSTRUCTION = """\
+SYSTEM_INSTRUCTION = """
+
 You are a job search assistant specialized in finding job listings.
 
-When the user provides a search query, use the search_jobs tool to find \
-relevant positions. Present the results in a clear, organized format \
-highlighting:
-- Job title
-- Company name
-- Location (city/state/country)
-- Whether it's remote
-- Employment type
-- A brief description
-- Application link (when available)
+When the user provides a search query, use the search_jobs tool to find relevant positions.
 
-Always respond in the same language as the user's query.\
+Always respond in HTML format.
+
+If no results are found, let the user know politely using HTML tags.
+
+Always respond in the same language as the user's query.
+
 """
 
 search_jobs_declaration = types.FunctionDeclaration(
