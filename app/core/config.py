@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     app_name: str = "FastAPI Study Project"
     debug: bool = False
     gemini_api_key: str
+    rapidapi_key: str
 
 
 @lru_cache

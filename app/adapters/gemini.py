@@ -5,7 +5,7 @@ from app.core.config import get_settings
 _client: genai.Client | None = None
 
 
-def _get_client() -> genai.Client:
+def get_client() -> genai.Client:
     global _client
     if _client is None:
         settings = get_settings()
@@ -15,9 +15,9 @@ def _get_client() -> genai.Client:
 
 async def generate_content(
     prompt: str,
-    model: str = "gemini-2.0-flash",
+    model: str = "gemini-2.5-flash",
 ) -> str:
-    client = _get_client()
+    client = get_client()
     response = await client.aio.models.generate_content(
         model=model,
         contents=prompt,
